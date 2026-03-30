@@ -11,6 +11,8 @@ Generate Temporal workflow code based on a completed assessment. This skill read
 
 ## Prerequisites
 
+### 1. Assessment files
+
 This skill requires a prior assessment. Look for these files in the current working directory:
 
 1. **`assessment-report.md`** — contains the system verdict and node classification table
@@ -18,7 +20,20 @@ This skill requires a prior assessment. Look for these files in the current work
 
 If these files do not exist, ask the user to run `/agentlens:assess` first, or point to where the assessment output was saved.
 
-Read both files and extract:
+### 2. Temporal Developer Skill
+
+Before generating code, check whether the Temporal Developer Skill is available. Look for it in the list of installed skills/plugins (e.g. check if `/temporal-developer` or similar Temporal skill commands are available).
+
+If the Temporal skill is **not installed**:
+1. Tell the user: _"The Temporal Developer Skill provides Claude Code with expert knowledge of Temporal patterns (determinism rules, retry policies, testing strategies). Installing it will produce higher-quality generated code."_
+2. Ask whether they want to install it now.
+3. If yes, run: `/plugin marketplace add temporalio/agent-skills`, then instruct the user to install `temporal-developer` from the plugin manager and restart the session.
+4. Tell the user to re-run `/agentlens:convert` after restarting — the assessment files will still be there.
+5. If the user declines, proceed without it.
+
+### 3. Extract assessment data
+
+Read both assessment files and extract:
 - The **system verdict**: Pure Workflow, Hybrid, or Genuinely Agentic
 - The **node classification table**: each node's name, classification, LLM usage, and connections
 - The **state schema**: data flowing between nodes

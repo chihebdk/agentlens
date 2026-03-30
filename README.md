@@ -55,12 +55,24 @@ claude --plugin-dir ./agentlens
 /plugin install agentlens@<marketplace-name>
 ```
 
+## Recommended: Temporal Developer Skill
+
+For best results with `/agentlens:convert`, install the [Temporal Developer Skill](https://docs.temporal.io/with-ai). It gives Claude Code expert-level knowledge of Temporal's programming model — workflow determinism, activity patterns, retry policies, error handling, testing strategies, and common gotchas.
+
+```bash
+/plugin marketplace add temporalio/agent-skills
+```
+
+Then open the plugin manager with `/plugin` and install `temporal-developer`.
+
+If you skip this step, `/agentlens:convert` will offer to install it for you before generating code.
+
 ## Usage
 
 1. Share your agent code with Claude
 2. Run `/agentlens:assess` to analyze the code
 3. Review the assessment report and execution graph
-4. Run `/agentlens:convert` to generate the Temporal workflow
+4. Run `/agentlens:convert` to generate the Temporal workflow (installs the Temporal skill if needed)
 5. Review the generated code and migration notes
 
 ## Example
