@@ -2,31 +2,18 @@
   "name": "agentlens-marketplace",
   "owner": {
     "name": "Chiheb Dkhil",
-    "github": "chihebdk"
+    "email": "chihebdk@github.com"
   },
   "plugins": [
     {
       "name": "agentlens",
       "version": "1.0.0",
-      "description": "Assess whether agentic AI code is genuinely agentic or a workflow in disguise, then generate Temporal workflow replacements. Supports LangGraph, CrewAI, AutoGen, LlamaIndex, Claude Agent SDK, Semantic Kernel, and raw Python.",
-      "license": "MIT",
-      "keywords": [
-        "agent",
-        "workflow",
-        "temporal",
-        "assessment",
-        "langgraph",
-        "crewai",
-        "autogen",
-        "llamaindex",
-        "optimization",
-        "cost-reduction"
-      ],
+      "description": "Assess whether agentic AI code is genuinely agentic or a workflow in disguise, then generate Temporal workflow replacements.",
+      "source": "./",
       "skills": [
-        "assess",
-        "convert"
-      ],
-      "repository": "https://github.com/chihebdk/agentlens"
+        "./skills/assess",
+        "./skills/convert"
+      ]
     }
   ]
 }
