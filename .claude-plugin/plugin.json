@@ -1,0 +1,21 @@
+{
+  "name": "agentlens",
+  "version": "1.0.0",
+  "description": "Assess whether agentic AI code is genuinely agentic or a workflow in disguise, then generate Temporal workflow replacements. Supports LangGraph, CrewAI, AutoGen, LlamaIndex, Claude Agent SDK, Semantic Kernel, and raw Python.",
+  "author": {
+    "name": "Chiheb Dkhil"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agent",
+    "workflow",
+    "temporal",
+    "assessment",
+    "langgraph",
+    "crewai",
+    "autogen",
+    "llamaindex",
+    "optimization",
+    "cost-reduction"
+  ]
+}
